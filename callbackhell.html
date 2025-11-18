@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="callback.js"></script>
+  </head>
+  <body>
+    <script>
+      /* function wakeup(){
+      return new Promise((resolve =>{
+       setTimeout(() => {
+        console.log("wake up");
+        resolve();
+       }, 3000);
+      }));
+     }
+     function brushTeeth(){
+      return new Promise((resolve =>{
+       setTimeout(() => {
+        console.log("brushTeeth");
+        resolve();
+       }, 3000);
+      }));
+     }
+     function eatBreakFast(){
+      return new Promise((resolve =>{
+       setTimeout(() => {
+        console.log("ate breakfast");
+        resolve();
+       }, 3000);
+      }));
+     }
+     wakeup()
+     .then(wakeup)
+     .then(brushTeeth)
+     .then(eatBreakFast)
+     .then(() => console.log())*/
+      function selectFood() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("Food got selected");
+            resolve();
+          }, 3000);
+        });
+      }
+    </script>
+  </body>
+</html>

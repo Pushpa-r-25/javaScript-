@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function getUserData(userID) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("getting user data");
+            resolve({ id: userID, name: "john Doe" });
+          }, 1000);
+        });
+      }
+      function getUserPosts() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("Getting user posts");
+            resolve([
+              { id: 1, title: "post 1" },
+              { id: 2, title: "post 2" },
+            ]);
+          }, 1000);
+        });
+      }
+      function getPostComments(postID) {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            console.log("Getting post comments");
+            resolve([
+              { id: 1, text: "great post !" },
+              { id: 2, text: " Thanks!" },
+            ]);
+          }, 1000);
+        });
+      }
+      getUserData(1).then((user) => {
+        console.log(user);
+      });
+      .then((posts) => {
+          console.log( posts);
+        })
+        .then((comments) => {
+          console.log( comments);
+        })
+        .catch((error) => {
+          console.error( error);
+        });
+    </script>
+  </body>
+</html>
